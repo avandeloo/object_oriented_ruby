@@ -16,6 +16,13 @@ class Store_Item
 
 end
 
+class Food < Store_Item
+  def initialize(input_options)
+    super
+    @shelf_life = input_options[:shelf_life]
+  end
+end
+
 item1 = Store_Item.new(
                         name_of_item: "Baseball", 
                         color: "White", 
@@ -37,5 +44,13 @@ item3 = Store_Item.new(
                         amount: 15
                       )
 
-item1.amount = 50
-item1.print_info
+item3 = Food.new(
+                        name_of_item: "Grapes", 
+                        color: "Red", 
+                        cost: 2.99, 
+                        amount: 20,
+                        shelf_life: "one week"
+                      )
+
+# item1.amount = 50
+p item3
